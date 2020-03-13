@@ -1,0 +1,16 @@
+syntax = "proto3";
+package test;
+option go_package = "pb";
+
+import "third_party/google/protobuf/empty.proto";
+import "third_party/google/api/annotations.proto";
+
+// Service A
+service A {
+    // here is MethodA comment
+    rpc MethodA (google.protobuf.Empty) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+          get: "/a"
+        };
+    };
+}
