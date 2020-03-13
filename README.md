@@ -1,4 +1,4 @@
-> from the apidocs.swagger.json, except to have 
+from the apidocs.swagger.json, expect to see
 >
 >"paths./a.get.summary": "here is MethodA comment" 
 >
