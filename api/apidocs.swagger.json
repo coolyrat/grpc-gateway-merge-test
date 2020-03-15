@@ -29,6 +29,15 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "name",
+            "description": "person's name.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "tags": [
           "A"
         ]
@@ -36,6 +45,7 @@
     },
     "/b": {
       "get": {
+        "summary": "here is MethodB comment",
         "operationId": "MethodB",
         "responses": {
           "200": {

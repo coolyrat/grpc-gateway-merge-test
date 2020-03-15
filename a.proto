@@ -8,9 +8,14 @@ import "third_party/google/api/annotations.proto";
 // Service A
 service A {
     // here is MethodA comment
-    rpc MethodA (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    rpc MethodA (Req) returns (google.protobuf.Empty) {
         option (google.api.http) = {
           get: "/a"
         };
     };
+}
+
+message Req {
+    // person's name
+    string name = 1;
 }

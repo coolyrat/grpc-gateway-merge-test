@@ -27,20 +27,65 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
+type Req struct {
+	// person's name
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Req) Reset()         { *m = Req{} }
+func (m *Req) String() string { return proto.CompactTextString(m) }
+func (*Req) ProtoMessage()    {}
+func (*Req) Descriptor() ([]byte, []int) {
+	return fileDescriptor_44591ff926c61195, []int{0}
+}
+func (m *Req) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Req.Unmarshal(m, b)
+}
+func (m *Req) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Req.Marshal(b, m, deterministic)
+}
+func (m *Req) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Req.Merge(m, src)
+}
+func (m *Req) XXX_Size() int {
+	return xxx_messageInfo_Req.Size(m)
+}
+func (m *Req) XXX_DiscardUnknown() {
+	xxx_messageInfo_Req.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Req proto.InternalMessageInfo
+
+func (m *Req) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func init() {
+	proto.RegisterType((*Req)(nil), "test.Req")
+}
+
 func init() { proto.RegisterFile("a.proto", fileDescriptor_44591ff926c61195) }
 
 var fileDescriptor_44591ff926c61195 = []byte{
-	// 149 bytes of a gzipped FileDescriptorProto
+	// 179 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x62, 0x4f, 0xd4, 0x2b, 0x28,
 	0xca, 0x2f, 0xc9, 0x17, 0x62, 0x29, 0x49, 0x2d, 0x2e, 0x91, 0x52, 0x2f, 0xc9, 0xc8, 0x2c, 0x4a,
 	0x89, 0x2f, 0x48, 0x2c, 0x2a, 0xa9, 0xd4, 0x4f, 0xcf, 0xcf, 0x4f, 0xcf, 0x49, 0xd5, 0x07, 0xcb,
 	0x27, 0x95, 0xa6, 0xe9, 0xa7, 0xe6, 0x16, 0x94, 0x54, 0x42, 0x94, 0x4b, 0x69, 0x60, 0x51, 0x98,
 	0x58, 0x90, 0xa9, 0x9f, 0x98, 0x97, 0x97, 0x5f, 0x92, 0x58, 0x92, 0x99, 0x9f, 0x57, 0x0c, 0x51,
-	0x69, 0xe4, 0xc5, 0xc5, 0xe8, 0x28, 0xe4, 0xca, 0xc5, 0xee, 0x9b, 0x5a, 0x92, 0x91, 0x9f, 0xe2,
-	0x28, 0x24, 0xa6, 0x07, 0x51, 0xae, 0x07, 0x33, 0x57, 0xcf, 0x15, 0x64, 0xae, 0x14, 0x0e, 0x71,
-	0x25, 0xae, 0xa6, 0xcb, 0x4f, 0x26, 0x33, 0xb1, 0x08, 0x31, 0xe9, 0x27, 0x3a, 0xb1, 0x44, 0x31,
-	0x15, 0x24, 0x25, 0xb1, 0x81, 0x55, 0x18, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0xfb, 0x86, 0xe0,
-	0x1b, 0xbc, 0x00, 0x00, 0x00,
+	0xa9, 0x24, 0xc9, 0xc5, 0x1c, 0x94, 0x5a, 0x28, 0x24, 0xc4, 0xc5, 0x92, 0x97, 0x98, 0x9b, 0x2a,
+	0xc1, 0xa8, 0xc0, 0xa8, 0xc1, 0x19, 0x04, 0x66, 0x1b, 0xd9, 0x72, 0x31, 0x3a, 0x0a, 0x59, 0x70,
+	0xb1, 0xfb, 0xa6, 0x96, 0x64, 0xe4, 0xa7, 0x38, 0x0a, 0x71, 0xea, 0x81, 0x1c, 0xa1, 0x17, 0x94,
+	0x5a, 0x28, 0x25, 0xa6, 0x07, 0x31, 0x54, 0x0f, 0x66, 0xbb, 0x9e, 0x2b, 0xc8, 0x76, 0x25, 0xae,
+	0xa6, 0xcb, 0x4f, 0x26, 0x33, 0xb1, 0x08, 0x31, 0xe9, 0x27, 0x3a, 0xb1, 0x44, 0x31, 0x15, 0x24,
+	0x25, 0xb1, 0x81, 0x55, 0x18, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0xf2, 0x5c, 0xd8, 0xba, 0xca,
+	0x00, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -56,7 +101,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type AClient interface {
 	// here is MethodA comment
-	MethodA(ctx context.Context, in *types.Empty, opts ...grpc.CallOption) (*types.Empty, error)
+	MethodA(ctx context.Context, in *Req, opts ...grpc.CallOption) (*types.Empty, error)
 }
 
 type aClient struct {
@@ -67,7 +112,7 @@ func NewAClient(cc *grpc.ClientConn) AClient {
 	return &aClient{cc}
 }
 
-func (c *aClient) MethodA(ctx context.Context, in *types.Empty, opts ...grpc.CallOption) (*types.Empty, error) {
+func (c *aClient) MethodA(ctx context.Context, in *Req, opts ...grpc.CallOption) (*types.Empty, error) {
 	out := new(types.Empty)
 	err := c.cc.Invoke(ctx, "/test.A/MethodA", in, out, opts...)
 	if err != nil {
@@ -79,14 +124,14 @@ func (c *aClient) MethodA(ctx context.Context, in *types.Empty, opts ...grpc.Cal
 // AServer is the server API for A service.
 type AServer interface {
 	// here is MethodA comment
-	MethodA(context.Context, *types.Empty) (*types.Empty, error)
+	MethodA(context.Context, *Req) (*types.Empty, error)
 }
 
 // UnimplementedAServer can be embedded to have forward compatible implementations.
 type UnimplementedAServer struct {
 }
 
-func (*UnimplementedAServer) MethodA(ctx context.Context, req *types.Empty) (*types.Empty, error) {
+func (*UnimplementedAServer) MethodA(ctx context.Context, req *Req) (*types.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MethodA not implemented")
 }
 
@@ -95,7 +140,7 @@ func RegisterAServer(s *grpc.Server, srv AServer) {
 }
 
 func _A_MethodA_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(types.Empty)
+	in := new(Req)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -107,7 +152,7 @@ func _A_MethodA_Handler(srv interface{}, ctx context.Context, dec func(interface
 		FullMethod: "/test.A/MethodA",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AServer).MethodA(ctx, req.(*types.Empty))
+		return srv.(AServer).MethodA(ctx, req.(*Req))
 	}
 	return interceptor(ctx, in, info, handler)
 }
